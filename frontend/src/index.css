@@ -1,0 +1,187 @@
+/* Regular */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Regular"),
+       url("./assets/fonts/satoshi/Satoshi-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Black */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Black"),
+       url("./assets/fonts/satoshi/Satoshi-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Black Italic*/
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-BlackItalic"),
+       url("./assets/fonts/satoshi/Satoshi-BlackItalic.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Bold"),
+       url("./assets/fonts/satoshi/Satoshi-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Bold Italic*/
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-BoldItalic"),
+       url("./assets/fonts/satoshi/Satoshi-BoldItalic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Italic */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Italic"),
+       url("./assets/fonts/satoshi/Satoshi-Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Light"),
+       url("./assets/fonts/satoshi/Satoshi-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-LightItalic"),
+       url("./assets/fonts/satoshi/Satoshi-LightItalic.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-Medium"),
+       url("./assets/fonts/satoshi/Satoshi-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium Italic */
+@font-face {
+  font-family: "Satoshi";
+  src: local("Satoshi-MediumItalic"),
+       url("./assets/fonts/satoshi/Satoshi-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* SF Pro Display Fonts */
+/* Regular */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-Regular"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-BlackItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.OTF") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-Bold"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Heavy Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-HeavyItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.OTF") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-LightItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-Medium"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Semi-Bold Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-SemiBoldItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.OTF") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Thin Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-ThinItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF") format("opentype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Ultra-Light Italic */
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SFProDisplay-UltraLightItalic"),
+       url("./assets/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.OTF") format("opentype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif, 'Satoshi', 'SF Pro Display';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  font-style: normal;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

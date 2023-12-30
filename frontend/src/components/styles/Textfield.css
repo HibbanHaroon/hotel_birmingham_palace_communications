@@ -1,0 +1,36 @@
+input{
+    width: 300px;
+    height: 40px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: #D4D4D8;
+    border-style: solid;
+
+    font-family: 'SF Pro Display';
+    font-weight: normal;
+    font-style: normal;
+
+    /* color: grey; */
+}
+
+/* input[type="date"], input[type="number"]{
+    color: grey;
+} */
+
+input:focus{
+    border-width: 1px;
+    border-color: #18181B;
+    border-style: solid;
+    
+    outline: none;  
+
+    color: #18181B;
+}
+
+input:focus::placeholder{
+    color: #18181B;
+}
