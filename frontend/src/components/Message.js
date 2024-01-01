@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import tickAnimation from '../assets/animations/tick.json';
 import toast from 'react-hot-toast';
 import './styles/Message.css'
@@ -131,7 +131,7 @@ const Message = (props) => {
   }
 
   const copiedToClipboardToast = () => toast('Copied to Clipboard!', {
-    duration: 3000,
+    duration: 1500,
     position: 'top-center',
   
     style: {
@@ -153,8 +153,8 @@ const Message = (props) => {
   });
 
   const messageDivRef = useRef(null);
+  const lottieRef = useRef();
   const [copied, setCopied] = useState(false);
-  const [animationStopped, setAnimationStopped] = useState(true);
 
   function copyToClipboard(){
     const messageDiv = messageDivRef.current;
@@ -171,7 +171,9 @@ const Message = (props) => {
       selection.removeAllRanges();
 
       setCopied(true);
-      setAnimationStopped(false);
+
+      lottieRef.current.setSpeed(2);
+      lottieRef.current.play();
 
       const tickAnimation = document.getElementById('tickAnimation');
       if (tickAnimation) {
@@ -184,7 +186,8 @@ const Message = (props) => {
 
   function handleAnimationStop(){
     setCopied(false);
-    setAnimationStopped(true);
+
+    lottieRef.current.stop();
 
     const tickAnimation = document.getElementById('tickAnimation');
     if (tickAnimation) {
@@ -192,14 +195,10 @@ const Message = (props) => {
     }
   }
 
-  const defaultOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: tickAnimation,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  const style = {
+    height: 200,
+    width: 200
+  }
 
   return (
     <div className='outerDiv'>
@@ -252,14 +251,9 @@ const Message = (props) => {
             <br></br>
             <b>HBP</b>
         </p>
-      </div>
-      <div className='tickAnimation' id='tickAnimation'>
-        <Lottie options={defaultOptions} height={200} width={200} isStopped={animationStopped} eventListeners={[
-          {
-            eventName: 'complete',
-            callback: () => handleAnimationStop(),
-          },
-        ]}/>
+        <div className='tickAnimation' id='tickAnimation'>
+          <Lottie animationData={tickAnimation} loop={false} autoplay={false} height={200} width={200} style={style} lottieRef={lottieRef} onComplete={handleAnimationStop}/>
+        </div>
       </div>
     </div>
   );

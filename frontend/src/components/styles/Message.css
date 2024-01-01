@@ -1,13 +1,12 @@
 .outerDiv{
     width: 50%;
     box-sizing: border-box;
-    padding: 10px 10px 10px 0px;
+    padding: 10px 50px 10px 0px;
     /* border: 1px solid green; */
+
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: relative;
 }
 
 .messageDiv{
@@ -17,6 +16,10 @@
     border-radius: 12px;
     border-style: solid;
     border-color: #D4D4D8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .messageDiv:hover{
