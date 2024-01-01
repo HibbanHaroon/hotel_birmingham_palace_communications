@@ -59,7 +59,7 @@ const Form = (props) => {
     <div className='formDiv'>
       <div className='formRow'>
         <label>Name</label>
-        <Textfield placeholder="e.g., Shaheer Ahmed" value={name} onChange={(e) => handleChange('name', e.target.value)} />
+        <Textfield placeholder="e.g., Fatima Khan" value={name} onChange={(e) => handleChange('name', e.target.value)} />
       </div>
       <div className='formRow'>
         <label>Phone Number</label>

@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+import Lottie from "react-lottie";
+import tickAnimation from '../assets/animations/tick.json';
+import toast from 'react-hot-toast';
 import './styles/Message.css'
 
 const Message = (props) => {
@@ -127,10 +130,81 @@ const Message = (props) => {
     advanceText = getAdvanceText(props.advance);
   }
 
+  const copiedToClipboardToast = () => toast('Copied to Clipboard!', {
+    duration: 3000,
+    position: 'top-center',
+  
+    style: {
+      fontFamily: 'Satoshi',
+    },
+    className: '',
+  
+    icon: '✅',
+  
+    iconTheme: {
+      primary: '#000',
+      secondary: '#fff',
+    },
+  
+    ariaProps: {
+      role: 'status',
+      'aria-live': 'polite',
+    },
+  });
+
+  const messageDivRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+  const [animationStopped, setAnimationStopped] = useState(true);
+
+  function copyToClipboard(){
+    const messageDiv = messageDivRef.current;
+
+    if (messageDiv) {
+      const selection = window.getSelection();
+      const range = document.createRange();
+
+      range.selectNodeContents(messageDiv);
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      document.execCommand('copy');
+      selection.removeAllRanges();
+
+      setCopied(true);
+      setAnimationStopped(false);
+
+      const tickAnimation = document.getElementById('tickAnimation');
+      if (tickAnimation) {
+        tickAnimation.style.display = 'flex';
+      }
+
+      copiedToClipboardToast();
+    }
+  }
+
+  function handleAnimationStop(){
+    setCopied(false);
+    setAnimationStopped(true);
+
+    const tickAnimation = document.getElementById('tickAnimation');
+    if (tickAnimation) {
+      tickAnimation.style.display = 'none';
+    }
+  }
+
+  const defaultOptions = {
+    loop: false,
+    autoplay: false,
+    animationData: tickAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   return (
     <div className='outerDiv'>
-      <div className='messageDiv'>
-      <p>
+      <div className={`messageDiv ${copied ? 'copiedDiv' : ''}`} id='messageDiv'ref={messageDivRef} onClick={copyToClipboard}>
+        <p>
             Dear {props.name}, 
             <br></br>
             <br></br>
@@ -178,6 +252,14 @@ const Message = (props) => {
             <br></br>
             <b>HBP</b>
         </p>
+      </div>
+      <div className='tickAnimation' id='tickAnimation'>
+        <Lottie options={defaultOptions} height={200} width={200} isStopped={animationStopped} eventListeners={[
+          {
+            eventName: 'complete',
+            callback: () => handleAnimationStop(),
+          },
+        ]}/>
       </div>
     </div>
   );

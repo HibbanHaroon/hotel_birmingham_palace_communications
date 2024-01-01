@@ -14,17 +14,15 @@ input{
     font-weight: normal;
     font-style: normal;
 
-    /* color: grey; */
+    color: grey;
 }
 
-/* input[type="date"], input[type="number"]{
-    color: grey;
-} */
+input:hover{
+    border-color: grey;
+}
 
 input:focus{
-    border-width: 1px;
     border-color: #18181B;
-    border-style: solid;
     
     outline: none;  
 
@@ -33,4 +31,8 @@ input:focus{
 
 input:focus::placeholder{
     color: #18181B;
+}
+
+input[type="date"]{
+    cursor: text;
 }
