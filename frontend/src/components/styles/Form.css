@@ -1,0 +1,28 @@
+.formDiv {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+label{
+    font-family: 'Satoshi';
+    margin-bottom: 5px; 
+}
+
+@media only screen and (max-width: 1000px) {
+    .formDiv {
+        width: 100%;
+        padding: 50px;
+    }
+}

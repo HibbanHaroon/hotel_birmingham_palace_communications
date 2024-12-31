@@ -1,0 +1,15 @@
+.contentDiv{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+@media only screen and (max-width: 1000px) {
+    .contentDiv{
+        display: block;
+        position: relative;
+        top: 0;
+    }
+}
